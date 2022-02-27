@@ -1,0 +1,32 @@
+<div class=main>
+  {% block main %}
+  <h1 align="center">Europa Universalis 4 Achievement Helper</h1>
+  <form action="" method="post">
+    <div id="meeh-btns">
+      </br>
+    </div>
+    </br>
+    <div id="new_item_div">
+      <input id="new_item_text" class="new_item" name="myID" placeholder="dont use, placeholder for user id">
+      </br>
+      <input id="new_item_text" class="new_item" name="myAchi">
+      </br>
+      </br>
+      <input id="new_item_button" name="search" class="new_item btn btn-primary" type="submit" value="Search">
+      <input id="all_my_ach" name="show_all" class="new_item btn btn-primary" type="submit" value="Show all">
+    </div>
+    </br>
+    {% if achiResult is not none %}
+    <h4 align="left">Name: {{achiResult.name}}</h4>
+    <h4 align="left">description: {{achiResult.description}}</h4>
+      {% if achiResult.achieved %}
+        <h4 align="left">Achieved: Yes!</h3>
+      {% else %}
+        <h4 align="left">Achieved: No :(</h3>
+      {% endif %}
+    {% endif %}
+    <div class="grid-container-new">
+    </div>
+    </form>
+  {% endblock %}
+</div>

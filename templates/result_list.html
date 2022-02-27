@@ -1,0 +1,35 @@
+<div class=main>
+  {% block main %}
+  <h1 align="center">Watchlist</h1>
+  <form action="" method="post">
+    </br>
+    <div id="meeh-btns">
+      <input id="all_my_ach" name="show_all" class="new_item btn btn-primary" type="submit" value="show all">
+    </div>
+    </br>
+    <div id="new_item_div">
+      <input id="new_item_text" class="new_item" name="myID" placeholder="dont use, placeholder for user id">
+      </br>
+      <input id="new_item_text" class="new_item" name="myAchi">
+      </br>
+      <input id="new_item_button" name="search" class="new_item btn btn-primary" type="submit" value="Search">
+    </div>
+    </br>
+    {% if achiResult_list is not none %}
+      <h4>---------------------------------------</h4>
+      {% for i in achiResult_list %}
+        <h4 align="left">Name: {{i.name}}</h4>
+        <h4 align="left">description: {{i.description}}</h4>
+          {% if i.achieved %}
+            <h4 align="left">Achieved: Yes!</h4>
+          {% else %}
+            <h4 align="left">Achieved: No :(</h4>
+          {% endif %}
+        <h4>---------------------------------------</h4>
+      {% endfor %}
+    {% endif %}
+    <div class="grid-container-new">
+    </div>
+    </form>
+  {% endblock %}
+</div>
